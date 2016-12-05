@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>GDSCTools report</title>
+
+
+   <link rel="stylesheet" href="./css/canvasXpress.css" type="text/css"/>
+   <link rel="stylesheet" href="./css/gdsc.css" type="text/css" />
+   <script src="./js/sorttable.js"></script>
+    <!-- Include required JS files -->
+    <link rel="stylesheet" href="./css/github-gist.css">
+    <script src="./js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <script type="text/javascript" src="./js/canvasXpress.min.js"></script>
+
+
+
+<script id="volcano">
+
+var loadVolcano = function() {
+    var cx = new CanvasXpress("canvasVolcano",
+    {
+    "z": {
+        //"FC" : ["3", "2","1", "0"], Somehow this does not work
+        // Many data points are not show when combined with sizeBy
+        // "sizeBy": "FC",
+        //   "sizes": [4, 10, 12, 18],
+        // "FC" : ,
+        "Group" : ['red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red', 'red']
+        },
+    "y" : {
+            "smps" : ["Regression coefficient",  "log10(ttest pvalue)"],
+            "vars": ['<pre>drugid        1.000000e+00\nRp            7.122426e-17\nalpha         1.670361e-02\nbayes         1.785714e+00\nln_alpha     -4.092131e+00\nttest         9.078413e-06\nlog_ttest     5.041990e+00\nmarkersize    2.000000e+01</pre>', '<pre>drugid        3.000000e+00\nRp            2.244754e-16\nalpha         5.865657e-02\nbayes         2.500000e+00\nln_alpha     -2.836056e+00\nttest         3.476482e-04\nlog_ttest     3.458860e+00\nmarkersize    2.000000e+01</pre>', '<pre>drugid         5.000000\nRp             0.163522\nalpha          0.016587\nbayes          2.500000\nln_alpha      -4.099114\nttest          0.015810\nlog_ttest      1.801073\nmarkersize    20.000000</pre>', '<pre>drugid         6.000000\nRp             0.000000\nalpha          0.018386\nbayes          1.470588\nln_alpha      -3.996185\nttest          0.653746\nlog_ttest      0.184591\nmarkersize    20.000000</pre>', '<pre>drugid         9.000000\nRp             0.047302\nalpha          0.039374\nbayes          1.388889\nln_alpha      -3.234646\nttest          0.000013\nlog_ttest      4.872929\nmarkersize    20.000000</pre>', '<pre>drugid        11.000000\nRp             0.000000\nalpha          0.065908\nbayes          1.470588\nln_alpha      -2.719488\nttest          0.021295\nlog_ttest      1.671720\nmarkersize    20.000000</pre>', '<pre>drugid        1.700000e+01\nRp           -3.734371e-16\nalpha         2.354080e-02\nbayes         1.351351e+00\nln_alpha     -3.749020e+00\nttest         7.230917e-06\nlog_ttest     5.140807e+00\nmarkersize    2.000000e+01</pre>', '<pre>drugid        2.900000e+01\nRp            4.712542e-01\nalpha         8.515925e-03\nbayes         5.000000e+01\nln_alpha     -4.765817e+00\nttest         2.474911e-56\nlog_ttest     5.560644e+01\nmarkersize    2.000000e+01</pre>', '<pre>drugid        3.000000e+01\nRp            1.194269e-16\nalpha         4.138346e-02\nbayes         1.612903e+00\nln_alpha     -3.184874e+00\nttest         3.153053e-01\nlog_ttest     5.012688e-01\nmarkersize    2.000000e+01</pre>', '<pre>drugid        32.000000\nRp             0.052500\nalpha          0.032997\nbayes          1.724138\nln_alpha      -3.411334\nttest          0.000317\nlog_ttest      3.498373\nmarkersize    20.000000</pre>'],
+            "data": [[0.0, 5.042, 20.0], [0.0, 3.459, 20.0], [0.164, 1.801, 20.0], [0.0, 0.185, 20.0], [0.047, 4.873, 20.0], [0.0, 1.672, 20.0], [-0.0, 5.141, 20.0], [0.471, 55.606, 20.0], [0.0, 0.501, 20.0], [0.053, 3.498, 20.0]]
+        },
+    "d": {
+            "line": [
+                {"color" : "blue", "width" : 2, "type": "dashed", "y": 3},
+                {"color" : "blue", "width" : 2, "type": "dashed", "y": 10},
+                ]
+            }
+        },
+
+          {"axisAlgorithm": "rPretty",
+           "backgroundType": "window",
+           "backgroundWindow": "rgb(220,220,220)",
+           "colorBy": "Group",
+           "colors": ['rgba(205,0,0,0.5)'] ,
+           "graphType": "Scatter2D",
+           "legendBackgroundColor": "rgb(250,250,250)",
+           "legendBoxColor": "rgb(0,0,10)",
+           "legendInside": false,
+           "legendPosition": "Bottom",
+           "showDecorations": true,
+           //"decorationsBackgroundColor": "rgb(220,220,220)",
+           //"decorationsBoxColor": "rgb(0,0,0)",
+          // "decorationsPosition": "bottomRight",
+           //"sizeBy": "SignedEffect",
+           "sizes": [20, 20, 25, 30],
+           "title": "Regression coefficient/ttest/bayes factor for all drugs",
+           "xAxis": ["Signed Effect Size"],
+            "setMinX": 0,
+            "setMaxX": 1,
+            "setMaxY": 61.1670844816,
+            "setMinY": 0,
+            "axisExtension": 0.,  // margin around min/max/x/y
+           "xAxisTickColor": "rgb(255,255,255)",
+           "yAxis": ["-log10(pvalue)"],
+           "yAxisTickColor": "rgb(255,255,255)",
+          }
+        );
+      }
+</script>
+
+
+
+
+
+
+
+
+
+    <script language="javascript">
+    function loadFunctions(){
+    
+        loadVolcano();
+    
+    
+    
+    
+    
+    }
+    </script>
+</head>
+
+
+<body onload="loadFunctions()">
+
+<div class="document" id="unset">
+<h1 class="title">Regression analysis summary</h1>
+    <h2 class="subtitle">Report and analysis created with
+        <a target="_blank" href="https://gdsctools.readthedocs.io">GDSCTools</A>,  (version 0.16.3)</h2>
+    <hr>
+    <p>Analysis Domain: <b>PANCAN</b> tissues/cancer cell type
+    
+    </p>
+    <hr>
+      
+    <div class="section">
+        
+            <div>
+        <b>Regression method:</b> lasso </br>
+        </div><hr>
+        
+        
+            <div><p>This table contains links to all drugs. The Rp columns contains the coefficient of correlation found with the method for the give alpha parameter. The ln_alpha column is just the -log10(alpha) value. The bayes and ttest columns gives an idea of the significance of the correlation as  compared to a null distribution.</p><div class="table_outer"><table border="1" class="dataframe sortable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>drugid</th>
+      <th>Rp</th>
+      <th>alpha</th>
+      <th>bayes</th>
+      <th>ln_alpha</th>
+      <th>ttest</th>
+      <th>ttest (-log10)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="drug_1.html">1</a></td>
+      <td><p style="background-color:#9E633F">0.0</p></td>
+      <td>1.67e-02</td>
+      <td><p style="background-color:#A36741">1.78</p></td>
+      <td>-4.09</td>
+      <td>9.08e-06</td>
+      <td>5.04</td>
+    </tr>
+    <tr>
+      <td><a href="drug_3.html">3</a></td>
+      <td><p style="background-color:#9E633F">0.0</p></td>
+      <td>5.87e-02</td>
+      <td><p style="background-color:#A56842">2.5</p></td>
+      <td>-2.84</td>
+      <td>3.48e-04</td>
+      <td>3.46</td>
+    </tr>
+    <tr>
+      <td><a href="drug_5.html">5</a></td>
+      <td><p style="background-color:#D48655">0.16</p></td>
+      <td>1.66e-02</td>
+      <td><p style="background-color:#A56842">2.5</p></td>
+      <td>-4.10</td>
+      <td>1.58e-02</td>
+      <td>1.80</td>
+    </tr>
+    <tr>
+      <td><a href="drug_6.html">6</a></td>
+      <td><p style="background-color:#9E633F">0.0</p></td>
+      <td>1.84e-02</td>
+      <td><p style="background-color:#A16641">1.47</p></td>
+      <td>-4.00</td>
+      <td>6.54e-01</td>
+      <td>0.18</td>
+    </tr>
+    <tr>
+      <td><a href="drug_9.html">9</a></td>
+      <td><p style="background-color:#AC6D45">0.04</p></td>
+      <td>3.94e-02</td>
+      <td><p style="background-color:#A16641">1.38</p></td>
+      <td>-3.23</td>
+      <td>1.34e-05</td>
+      <td>4.87</td>
+    </tr>
+    <tr>
+      <td><a href="drug_11.html">11</a></td>
+      <td><p style="background-color:#9E633F">0.0</p></td>
+      <td>6.59e-02</td>
+      <td><p style="background-color:#A16641">1.47</p></td>
+      <td>-2.72</td>
+      <td>2.13e-02</td>
+      <td>1.67</td>
+    </tr>
+    <tr>
+      <td><a href="drug_17.html">17</a></td>
+      <td><p style="background-color:#9C633F">0.0</p></td>
+      <td>2.35e-02</td>
+      <td><p style="background-color:#A16641">1.35</p></td>
+      <td>-3.75</td>
+      <td>7.23e-06</td>
+      <td>5.14</td>
+    </tr>
+    <tr>
+      <td><a href="drug_29.html">29</a></td>
+      <td><p style="background-color:#FFC77E">0.47</p></td>
+      <td>8.52e-03</td>
+      <td><p style="background-color:#FFC77E">50.0</p></td>
+      <td>-4.77</td>
+      <td>2.47e-56</td>
+      <td>55.61</td>
+    </tr>
+    <tr>
+      <td><a href="drug_30.html">30</a></td>
+      <td><p style="background-color:#9E633F">0.0</p></td>
+      <td>4.14e-02</td>
+      <td><p style="background-color:#A36741">1.61</p></td>
+      <td>-3.18</td>
+      <td>3.15e-01</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <td><a href="drug_32.html">32</a></td>
+      <td><p style="background-color:#AF6E46">0.05</p></td>
+      <td>3.30e-02</td>
+      <td><p style="background-color:#A36741">1.72</p></td>
+      <td>-3.41</td>
+      <td>3.17e-04</td>
+      <td>3.50</td>
+    </tr>
+  </tbody>
+</table></div></div>
+        
+            <hr><div><img src=gdsctools_regression_scatter_plot.png></img>/<div>
+        
+            
+         <div class="wrap">
+          <div class="content">
+              <center>
+                  <canvas id='canvasVolcano' width='800' height='540'></canvas>
+              </center>
+          </div>
+          <div class="clear">&nbsp;</div>
+        </div>
+        
+        
+    </div>
+
+      <hr/>
+
+    <div class="footer">
+       <div class="logo">
+            <img src="./images/sanger-logo.png"  title=sanger-logo alt="sanger"/>
+            <img src="./images/EBI_logo.png"  title=sanger-logo alt="EBI"/>
+       </div>
+
+      <div class="copyright">
+          <div class="date">Created on 2016-12-05 13:58:37 by cokelaer</div>
+           Please visit <a href="http://gdsctools.readthedocs.io">online</a>
+           documentation for details.
+       </div>
+   </div>
+</div>
+</body>
+</html>

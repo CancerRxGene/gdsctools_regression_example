@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>GDSCTools report</title>
+
+
+   <link rel="stylesheet" href="./css/canvasXpress.css" type="text/css"/>
+   <link rel="stylesheet" href="./css/gdsc.css" type="text/css" />
+   <script src="./js/sorttable.js"></script>
+    <!-- Include required JS files -->
+    <link rel="stylesheet" href="./css/github-gist.css">
+    <script src="./js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <script type="text/javascript" src="./js/canvasXpress.min.js"></script>
+
+
+
+
+
+
+
+    <script language="javascript">
+    function loadFunctions(){
+    
+    
+    
+    
+    
+    }
+    </script>
+</head>
+
+
+<body onload="loadFunctions()">
+
+<div class="document" id="unset">
+<h1 class="title">ANOVA analysis summary</h1>
+    <h2 class="subtitle">Report and analysis created with
+        <a target="_blank" href="https://gdsctools.readthedocs.io">GDSCTools</A>,  (version 0.16.3)</h2>
+    <hr>
+    <p>Analysis Domain: <b>PANCAN</b> tissues/cancer cell type
+    
+    </p>
+    <hr>
+      
+    <div class="section">
+        
+            <div>
+        <b>DrugID:</b> 17</br>
+        <b>Regression method:</b> lasso </br>
+        <b>Regression, alpha parameter used:</b> 0.023</br>
+        <b>Bayes factor:</b> 1.351</br>
+        <b>Regression coeffcient:</b> -3.7343713818585883e-16</br>
+        </div>
+        
+        
+            <div>
+                <h2>boxplot results</h2>
+                <p>to do</p>
+                <img src="gdsctools_regression_boxplot_17.png">
+                
+        
+            <div>
+                <h2>randomness results</h2>
+                <p>Here we run the regression analysis N times and
+plot the regression value (x-axis) for the real data (blue) and randomising the
+variable to explain (red). The bayes and ttest metric are then computed. </p>
+                <img src="gdsctools_regression_randomness_17.png">
+                
+        
+            <div>
+                <h2>importance results</h2>
+                <p>Feature with non-null weights. If empty, it means no feature of interests were found</p>
+                <img src="gdsctools_regression_importance_17.png">
+                
+        
+            <div>
+                <h2>weights results</h2>
+                <p>Feature with non-null weights. If empty, it means no feature of interests were found</p>
+                <img src="gdsctools_regression_weights_17.png">
+                
+        
+    </div>
+
+      <hr/>
+
+    <div class="footer">
+       <div class="logo">
+            <img src="./images/sanger-logo.png"  title=sanger-logo alt="sanger"/>
+            <img src="./images/EBI_logo.png"  title=sanger-logo alt="EBI"/>
+       </div>
+
+      <div class="copyright">
+          <div class="date">Created on 2016-12-05 13:58:37 by cokelaer</div>
+           Please visit <a href="http://gdsctools.readthedocs.io">online</a>
+           documentation for details.
+       </div>
+   </div>
+</div>
+</body>
+</html>
